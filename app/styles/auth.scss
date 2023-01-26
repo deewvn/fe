@@ -1,0 +1,58 @@
+.auth-page {
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.auth {
+  padding: 20px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px -1px rgba(32, 54, 87, 0.13);
+
+  h4 {
+    margin: 0 0 20px;
+
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  input {
+    width: 300px;
+    height: 35px;
+
+    padding: 0 10px;
+
+    border: 1px solid rgb(32, 54, 87);
+    border-radius: 6px;
+    box-sizing: border-box;
+
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 2px 8px -1px rgba(32, 54, 87, 0.13);
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    width: 300px;
+    height: 35px;
+
+    color: #fff;
+
+    background-color: #1971ED;
+    border: 1px solid #1971ED;
+    border-radius: 6px;
+  }
+}

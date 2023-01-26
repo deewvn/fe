@@ -1,0 +1,127 @@
+<div class="feedback">
+    <h4 class="feedback__title">Отзывы</h4>
+    <button class="prev-btn"><</button>
+    <div class="comments">
+        <div class="comment active">
+            <img src="assets/img/user.png" width="50px" height="50px">
+            <div class="comment__inner">
+                <p>Жмышенко В.А.</p>
+                <p> Очень понравился материал. Узнал полезные методики, которые уже успешно применяю в работе. Отличная
+                    организация домашних заданий, на которых зарабатывается полезный опыт. По всем вопросам и домашним
+                    заданиям очень оперативно получал ответы. К сожалению я не успевал на еженедельные дискуссии в
+                    19-00, на
+                    которых Наталья отвечала на возникшие вопросы, но вопросы задавались заранее и потом можно было
+                    прослушать запись консультации. Рекомендую курс начинающим и опытным тест менеджерам, уверен, что
+                    каждый
+                    найдет в курсе новую для себя информацию, а выполнение домашних заданий поможет сориентироваться и
+                    улучшить рабочий процесс на своем рабочем месте. Спасибо!
+                </p>
+            </div>
+        </div>
+
+        <div class="comment">
+            <img src="assets/img/user.png" width="50px" height="50px">
+            <div class="comment__inner">
+                <p>Жмышенко В.А. 1</p>
+                <p> Очень понравился материал. Узнал полезные методики, которые уже успешно применяю в работе. Отличная
+                    организация домашних заданий, на которых зарабатывается полезный опыт. По всем вопросам и домашним
+                    заданиям очень оперативно получал ответы. К сожалению я не успевал на еженедельные дискуссии в
+                    19-00, на
+                    которых Наталья отвечала на возникшие вопросы, но вопросы задавались заранее и потом можно было
+                    прослушать запись консультации. Рекомендую курс начинающим и опытным тест менеджерам, уверен, что
+                    каждый
+                    найдет в курсе новую для себя информацию, а выполнение домашних заданий поможет сориентироваться и
+                    улучшить рабочий процесс на своем рабочем месте. Спасибо!
+                </p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="assets/img/user.png" width="50px" height="50px">
+            <div class="comment__inner">
+                <p>Жмышенко В.А. 2</p>
+                <p> Очень понравился материал. Узнал полезные методики, которые уже успешно применяю в работе. Отличная
+                    организация домашних заданий, на которых зарабатывается полезный опыт. По всем вопросам и домашним
+                    заданиям очень оперативно получал ответы. К сожалению я не успевал на еженедельные дискуссии в
+                    19-00, на
+                    которых Наталья отвечала на возникшие вопросы, но вопросы задавались заранее и потом можно было
+                    прослушать запись консультации. Рекомендую курс начинающим и опытным тест менеджерам, уверен, что
+                    каждый
+                    найдет в курсе новую для себя информацию, а выполнение домашних заданий поможет сориентироваться и
+                    улучшить рабочий процесс на своем рабочем месте. Спасибо!
+                </p>
+            </div>
+        </div>
+    </div>
+    <button class="next-btn">></button>
+    <div class="dots">
+    </div>
+</div>
+
+<script>
+    const slides = document.querySelectorAll('.comment');
+    const container = document.querySelector('.comments');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    let dots = [];
+
+    let currentSlide = slides[0];
+    let currentSlideIndex = 0;
+    let targetSlide = null;
+
+    let slideContainerOffset = 0;
+
+    slides.forEach((slide, index) => {
+        let dot = document.createElement('div');
+        dot.setAttribute('class', 'dot');
+        dot.setAttribute('id', index.toString());
+
+        document.querySelector('.dots').appendChild(dot);
+
+        dot.addEventListener('click', () => {
+            targetSlide = slides[index];
+            let offsetWidth = currentSlide.offsetLeft - targetSlide.offsetLeft;
+            handleSliderChange(offsetWidth, index);
+        })
+    });
+    dots = document.querySelectorAll('.dot');
+    dots[0].classList.add('active');
+
+    prevBtn.addEventListener('click', () => {
+        targetSlide = slides[currentSlideIndex - 1];
+        const slideWidth = targetSlide.getBoundingClientRect().width;
+        handleSliderChange(slideWidth, currentSlideIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        targetSlide = slides[currentSlideIndex + 1];
+        const slideWidth = targetSlide.getBoundingClientRect().width;
+        handleSliderChange(slideWidth, currentSlideIndex + 1);
+    });
+
+    function handleSliderChange(offsetWidth, index) {
+        slideContainerOffset = slideContainerOffset + offsetWidth;
+
+        slides.forEach((slide) => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+        container.style.transform = `translateX(${slideContainerOffset}px)`;
+
+        currentSlideIndex = index;
+
+        currentSlide = targetSlide;
+        targetSlide = null;
+        updateView();
+    }
+
+    function updateView() {
+        for(let i = 0; i < dots.length; i+=1) {
+            if (dots[i].classList.contains('active')) {
+                dots[i].classList.remove('active');
+            }
+
+            if (i === currentSlideIndex) {
+                dots[i].classList.add('active');
+            }
+        }
+    }
+</script>

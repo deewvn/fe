@@ -1,0 +1,43 @@
+{
+  "name": "fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.27.11",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-cache": "^1.1.3",
+    "gulp-changed": "^4.0.3",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^5.1.0",
+    "imagemin-pngquant": "^9.0.2",
+    "node-sass": "^8.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "dependencies": {
+    "@fullcalendar/core": "6.0.3",
+    "@fullcalendar/daygrid": "6.0.3",
+    "@fullcalendar/list": "6.0.3",
+    "@fullcalendar/resource-timeline": "6.0.3",
+    "@fullcalendar/timegrid": "6.0.3",
+    "@fullcalendar/timeline": "6.0.3"
+  }
+}

@@ -1,0 +1,19 @@
+.footer {
+  padding: 0 300px;
+  margin-top: 50px;
+
+  display: flex;
+
+  background-color: #1D1D1D;
+
+  p {
+    font-size: 12px;
+    color: #fff;
+  }
+}
+
+@media (max-width: 1550px) {
+  .footer {
+    padding: 0 100px;
+  }
+}

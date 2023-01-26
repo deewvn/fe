@@ -1,0 +1,22 @@
+@import 'fonts';
+@import 'topbar';
+@import 'footer';
+@import 'logo';
+@import 'feedback';
+@import 'news';
+@import 'partners';
+@import 'calendar';
+@import 'modes';
+@import 'auth';
+@import 'subnav';
+@import 'user-info';
+@import 'students-table';
+
+body {
+  margin: 0;
+  background-color: #F5F7FA;
+}
+
+body * {
+  font-family: 'Roboto', serif;
+}

@@ -1,0 +1,40 @@
+.modes {
+  margin-top: 30px;
+  padding: 0 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.mode {
+  display: flex;
+  gap: 50px;
+
+  h4 {
+    font-weight: 400;
+    font-size: 21px
+  }
+
+  div {
+    max-width: 600px;
+  }
+}
+
+ul {
+  padding: 0;
+
+  list-style: none;
+}
+
+li:before {
+  content: "—";
+  padding-right: 5px;
+}
+
+@media (max-width: 1550px) {
+  .modes {
+    padding: 0 100px;
+  }
+}
